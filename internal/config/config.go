@@ -224,7 +224,7 @@ func (config *config) GetConsulBasePath() string {
 	return config.consulBasePath
 }
 
-func (config *config) ConsulNameSpace() string {
+func (config *config) GetConsulNameSpace() string {
 	return config.consulNameSpace
 }
 
