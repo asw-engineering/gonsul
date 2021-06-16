@@ -15,6 +15,7 @@ pipeline {
         stage('Check Tools') {
             steps {
                 sh "make -v"
+                sh "go version"
             }}
         
         stage('Compile') {          
