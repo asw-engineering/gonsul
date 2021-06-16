@@ -49,6 +49,11 @@ func (op *operation) GetValue() string {
 	return op.entry.Value
 }
 
+// GetNamespace ...
+func (op *operation) GetNamespace() string {
+	return "development"
+}
+
 // AddInsert ...
 func (matrix *OperationMatrix) AddInsert(entry Entry) {
 	// Increment our total number of operations
