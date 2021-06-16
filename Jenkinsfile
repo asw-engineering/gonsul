@@ -17,14 +17,12 @@ pipeline {
                 sh "make -v"
             }}
         
-        stage('Compile') {
-        stages {
-            
+        stage('Compile') {          
             steps {
                 sh "make build"
             }
             
-        }}
+        }
 
         stage('Test') {
             steps {
