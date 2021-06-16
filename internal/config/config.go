@@ -31,7 +31,7 @@ type config struct {
 	consulURL       string
 	consulACL       string
 	consulBasePath  string
-	ConsulNameSpace string
+	consulNameSpace string
 	expandJSON      bool
 	expandYAML      bool
 	doSecrets       bool
