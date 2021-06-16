@@ -25,7 +25,7 @@ pipeline {
                 echo 'New build version is...'
                 sh "/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul -v"
                 echo 'Available flags...'
-                sh '/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul ; exit 0'
+                sh '/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul || exit 0'
             }
             
         }
