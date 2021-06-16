@@ -32,7 +32,7 @@ pipeline {
                 echo 'Real test...'
 
 
-                // build job: 'cloud-operational-configuration/development', quietPeriod: 0
+                .build job: 'cloud-operational-configuration/development', quietPeriod: 0
             }}
 
 
