@@ -1,0 +1,39 @@
+pipeline {
+    agent {
+        node {
+        label 'LinuxGeneric'
+        }
+    }
+    options {
+        disableConcurrentBuilds()
+    }
+    environment {
+        consultool = "gonsul"
+    }
+
+    stages {
+        stage('Check Tools') {
+            steps {
+                sh "make -v"
+            }}
+        
+        stage('Compile') {
+        stages {
+            
+            steps {
+                sh "make build"
+            }
+            
+        }}
+
+        stage('Test') {
+            steps {
+                echo 'Real test...'
+                // build job: 'cloud-operational-configuration/development', quietPeriod: 0
+            }}
+
+
+    }
+    
+}
+
