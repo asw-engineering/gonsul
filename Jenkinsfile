@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh "make build"
                 echo 'New version is...'
-                sh "home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul -v"
+                sh "/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul -v"
             }
             
         }
