@@ -16,7 +16,8 @@ pipeline {
             steps {
                 sh "make -v"
                 sh "go version"
-            }}
+            }
+        }
         
         stage('Compile') {          
             steps {
@@ -31,9 +32,8 @@ pipeline {
             steps {
                 echo 'Real test...'
                 build job: 'cloud-operational-configuration/development', quietPeriod: 0
-            }}
-
-
+            }
+        }
     }
     
 }
