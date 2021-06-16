@@ -86,7 +86,7 @@ func (i *importer) processOperations(matrix entities.OperationMatrix) {
 		// so we can clearly identify nil values, as in https://willnorris.com/2014/05/go-rest-apis-and-pointers
 		verb := op.GetVerb()
 		path := op.GetPath()
-		namespace := op.GetNamespace()
+		namespace := i.config.GetConsulNameSpace()
 
 		var TxnKV entities.ConsulTxnKV
 

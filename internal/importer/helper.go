@@ -169,7 +169,6 @@ func (i *importer) printOperations(matrix entities.OperationMatrix, printWhat st
 				// generate the actual payload to calculate it's lenght
 				verb := op.GetVerb()
 				path := op.GetPath()
-				// namespace := op.GetNamespace()
 				namespace := i.config.GetConsulNameSpace()
 				if op.GetType() == entities.OperationDelete {
 					warning = "!!"
