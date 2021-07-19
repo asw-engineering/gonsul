@@ -24,8 +24,10 @@ pipeline {
                 sh "make build"
                 echo 'New build version is...'
                 sh "/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul -v"
+                sh "cp /home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul /home/jenkins/"
+                sh "chmod +x /home/jenkins/gonsul"
                 echo 'Available flags...'
-                sh '/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul || exit 0'
+                sh '/home/jenkins/gonsul || exit 0'
             }
             
         }
