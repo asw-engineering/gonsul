@@ -1,0 +1,44 @@
+pipeline {
+    agent {
+        node {
+        label 'LinuxGeneric'
+        }
+    }
+    options {
+        disableConcurrentBuilds()
+    }
+    environment {
+        consultool = "gonsul"
+    }
+
+    stages {
+        stage('Check Tools') {
+            steps {
+                sh "make -v"
+                sh "go version"
+            }
+        }
+        
+        stage('Compile') {          
+            steps {
+                sh "make build"
+                echo 'New build version is...'
+                sh "/home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul -v"
+                sh "cp /home/jenkins/workspace/d_feature_support-for-namespaces/bin/gonsul /home/jenkins/"
+                sh "chmod +x /home/jenkins/gonsul"
+                echo 'Available flags...'
+                sh '/home/jenkins/gonsul || exit 0'
+            }
+            
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Real test...'
+                build job: 'cloud-operational-configuration/development', quietPeriod: 0
+            }
+        }
+    }
+    
+}
+
